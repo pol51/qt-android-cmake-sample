@@ -3,6 +3,12 @@ set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 project(hello)
 
+if(DEFINED ENV{QTDIR})
+  set(CMAKE_PREFIX_PATH $ENV{QTDIR} ${CMAKE_PREFIX_PATH})
+else()
+  message(FATAL_ERROR "ERROR: Environment variable QTDIR is not set. Please locate your Qt folder MY_QT5_DIR.")
+endif()
+
 ################################################################################
 # Qt library
 ################################################################################
