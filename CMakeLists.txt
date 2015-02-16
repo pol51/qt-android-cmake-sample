@@ -3,6 +3,10 @@ set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 project(hello)
 
+
+################################################################################
+# take Qt from the QTDIR environment variable
+################################################################################
 if(DEFINED ENV{QTDIR})
   set(CMAKE_PREFIX_PATH $ENV{QTDIR} ${CMAKE_PREFIX_PATH})
 else()
